@@ -177,4 +177,3 @@ Access the application at http://127.0.0.1:8000/.
 
 **coder30247**  
 Feel free to contribute, report issues, or suggest improvements!
-```
