@@ -100,6 +100,39 @@ Access the application at http://127.0.0.1:8000/.
 
 # API Endpoints
 
+##Authentication
+-**POST** `/api/token/`
+
+Obtain a JWT token for authentication.
+Request Body Example:
+```json
+{
+  "username": "your_username",
+  "password": "your_password"
+}
+```
+Response Example:
+```json
+{
+  "access": "your_access_token",
+  "refresh": "your_refresh_token"
+}
+```
+-**POST** `/api/token/refresh/`
+
+Refresh an expired access token using the refresh token.
+Request Body Example:
+```json
+{
+  "refresh": "your_refresh_token"
+}
+```
+Response Example:
+```json
+{
+  "access": "new_access_token"
+}
+```
 ## Book Management
 
 - **GET** `/book_data/`  
