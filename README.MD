@@ -178,8 +178,3 @@ Access the application at http://127.0.0.1:8000/.
 **coder30247**  
 Feel free to contribute, report issues, or suggest improvements!
 ```
-
-### Key Points:
-- I added horizontal lines (`---`) to separate sections for better readability.
-- I formatted the text with proper heading levels (e.g., `##` for subheadings) to organize the sections clearly.
-- I used indented code blocks for examples of JSON requests and responses, with a consistent format for each.
