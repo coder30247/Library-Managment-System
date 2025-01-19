@@ -100,7 +100,8 @@ Access the application at http://127.0.0.1:8000/.
 
 # API Endpoints
 
-##Authentication
+## Authentication
+
 -**POST** `/api/token/`
 
 Obtain a JWT token for authentication.
