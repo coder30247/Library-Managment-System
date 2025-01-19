@@ -273,11 +273,12 @@ class Issued_Book_Data_ViewSet(viewsets.ModelViewSet):
         return Response({'message': 'Book returned successfully'}, status=status.HTTP_204_NO_CONTENT)
 
     @action(detail=True, methods=['get'])
-    def get_books_due(self, request, pk=None):
+    def get_all_books_due(self, request):
         try:
-            borrower = pk
-            issued_books = Issued_Book_Data.objects.filter(borrower=borrower)
+            # Retrieve all books that are due to be returned
+            issued_books = Issued_Book_Data.objects.filter(due_date__lt=date.today())
             serializer = Issued_Book_Data_Serializer(issued_books, many=True)
             return Response(serializer.data)
         except Exception as e:
+
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

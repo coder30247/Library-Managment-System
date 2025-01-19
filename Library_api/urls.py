@@ -26,4 +26,5 @@ urlpatterns = [
     path("issued_book_data/issue_book/", Issued_Book_Data_ViewSet.as_view({'post': 'issue_book'}), name="issue_book"),
     path("issued_book_data/renew_book/<int:pk>/", Issued_Book_Data_ViewSet.as_view({'put': 'renew_issued_book'}), name="renew_issued_book"),
     path("issued_book_data/return_book/<int:pk>/", Issued_Book_Data_ViewSet.as_view({'delete': 'return_issued_book'}), name="return_issued_book"),
+    path("issued_book_data/get_all_books_due/", Issued_Book_Data_ViewSet.as_view({'get': 'get_all_books_due'}), name="get_all_books_due"),
 ]
