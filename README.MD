@@ -134,6 +134,7 @@ Response Example:
   "access": "new_access_token"
 }
 ```
+**Add your access token in your header of your request to access API Endpoints**
 ## Book Management
 
 - **GET** `/book_data/`  
