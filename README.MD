@@ -102,7 +102,7 @@ Access the application at http://127.0.0.1:8000/.
 
 ## Authentication
 
--**POST** `/api/token/`
+- **POST** `/api/token/`
 
 Obtain a JWT token for authentication.
 Request Body Example:
@@ -119,7 +119,7 @@ Response Example:
   "refresh": "your_refresh_token"
 }
 ```
--**POST** `/api/token/refresh/`
+- **POST** `/api/token/refresh/`
 
 Refresh an expired access token using the refresh token.
 Request Body Example:
