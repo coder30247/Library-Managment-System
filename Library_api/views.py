@@ -254,16 +254,17 @@ class Issued_Book_Data_ViewSet(viewsets.ModelViewSet):
         serializer = Issued_Book_Data_Serializer(issued_book)
         return Response(serializer.data)
 
-    @action(detail=True, methods=['delete'])
+    @action(detail=True ,methods=['delete'])
     def return_issued_book(self, request, pk=None):
         try:
-            issued_book = Issued_Book_Data.objects.get(pk=pk)
+            # Retrieve the issued record using the book ID (pk here refers to book_id)
+            issued_book = Issued_Book_Data.objects.get(issued_book_id=pk)
         except Issued_Book_Data.DoesNotExist:
             return Response({'error': 'Issued book not found'}, status=status.HTTP_404_NOT_FOUND)
 
         borrower = issued_book.borrower
 
-        # Decrease the student's borrowed book count
+        # Decrease the borrower's borrowed book count
         borrower.borrowed_book_count -= 1
         borrower.save()
 
